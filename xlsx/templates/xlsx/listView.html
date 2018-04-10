@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        
+    </head>
+    <body>
+        {% if test_list %}
+        <ul>
+        {% for test in test_list %}
+        <li><a href="/xlsx/{{test.epid}}/downXlsx">{{ test.name }}  {{test.epid}}</a></li>
+        {% endfor %}
+        </ul>
+        {% else %}
+        <p>No one is here</p>
+        {% endif %}
+        
+        <a href="/xlsx/heyyo/abcd/test"> test </a>
+        <hr>
+        <div>
+            <h1>원하는 날짜 뽑기</h1>
+            <form action="/xlsx/xlsxbydate" method="post" id="date">
+                <label for="epid">Name</label>
+                <select name="epid" form="date">
+                    {% if test_list %}
+                        {% for test in test_list %}
+                        <option value="{{test.epid}}">{{test.name}}</option>
+                        {% endfor %}
+                    {% else %}
+                        <option disable>NONE</option>
+                    {% endif%}
+                </select>
+                <label for="start_date">Start Date</label>
+                <input type="date" name="start_date"/>
+                <label for="end_date">End Date</label>
+                <input type="date" name="end_date"/>
+                
+                <input type="submit" value="Submit"/>
+            </form>
+        </div>
+        <hr>
+        
+        <div>
+            <h1>달 단위 뽑기</h1>
+            <form action="/xlsx/xlsxbymonth" method="post" id="month">
+                <label for="epid">Name</label>
+                <select name="epid" form="month">
+                    {% if test_list %}
+                        {% for test in test_list %}
+                        <option value="{{test.epid}}">{{test.name}}</option>
+                        {% endfor %}
+                    {% else %}
+                        <option disable>NONE</option>
+                    {% endif%}
+                </select>
+                <label for="year">Year</label>
+                <select name="year" form="month">
+                    {% for i in year_range %}
+                    <option value="{{i}}">{{i}}</option>
+                    {% endfor %}
+                </select>
+                <label for="month">Month</label>
+                <select name="month" form="month">
+                    {% for i in month_range %}
+                    <option value="{{i}}">{{i}}</option>
+                    {% endfor %}
+                </select>
+                
+                
+                <input type="submit" value="Submit"/>
+            </form>
+        </div>
+        
+    </body>
+</html>

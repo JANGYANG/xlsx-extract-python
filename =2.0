@@ -1,0 +1,67 @@
+Downloading/unpacking django from https://pypi.python.org/packages/d4/73/227f6efdb7dd3b74b9785795dffc0f28c4db9c59e2a05e3547fcf003635b/Django-2.0.4.tar.gz#md5=9d4c555b798406361521dcf282f6638a
+  Running setup.py (path:/tmp/pip_build_ubuntu/django/setup.py) egg_info for package django
+    
+    ==========================
+    Unsupported Python version
+    ==========================
+    
+    This version of Django requires Python 3.4, but you're trying to
+    install it on Python 2.7.
+    
+    This may be because you are using a version of pip that doesn't
+    understand the python_requires classifier. Make sure you
+    have pip >= 9.0 and setuptools >= 24.2, then try again:
+    
+        $ python -m pip install --upgrade pip setuptools
+        $ python -m pip install django
+    
+    This will install the latest version of Django which works on your
+    version of Python. If you can't upgrade your pip (or Python), request
+    an older version of Django:
+    
+        $ python -m pip install "django<2"
+    Complete output from command python setup.py egg_info:
+    
+
+==========================
+
+Unsupported Python version
+
+==========================
+
+
+
+This version of Django requires Python 3.4, but you're trying to
+
+install it on Python 2.7.
+
+
+
+This may be because you are using a version of pip that doesn't
+
+understand the python_requires classifier. Make sure you
+
+have pip >= 9.0 and setuptools >= 24.2, then try again:
+
+
+
+    $ python -m pip install --upgrade pip setuptools
+
+    $ python -m pip install django
+
+
+
+This will install the latest version of Django which works on your
+
+version of Python. If you can't upgrade your pip (or Python), request
+
+an older version of Django:
+
+
+
+    $ python -m pip install "django<2"
+
+----------------------------------------
+Cleaning up...
+Command python setup.py egg_info failed with error code 1 in /tmp/pip_build_ubuntu/django
+Storing debug log for failure in /home/ubuntu/.pip/pip.log
