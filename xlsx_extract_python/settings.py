@@ -85,7 +85,7 @@ WSGI_APPLICATION = 'xlsx_extract_python.wsgi.application'
 DATABASES = {
   'default': {
   'ENGINE': 'django.db.backends.mysql',
-    'NAME': 'fbLens',
+    'NAME': 'bti',
     'HOST': '13.124.45.97',
     'PORT': '3306',
     'USER': 'root',

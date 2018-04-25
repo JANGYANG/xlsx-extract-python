@@ -1,7 +1,19 @@
 <!DOCTYPE html>
 <html>
     <head>
-        
+        <style type="text/css">
+        body{
+        }    
+        .con{
+            margin-top: 100px;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+        </style>
     </head>
     <body>
         <!--{% if test_list %}-->
@@ -37,11 +49,21 @@
         <!--        <input type="submit" value="Submit"/>-->
         <!--    </form>-->
         <!--</div>-->
-        <hr>
         
-        <div>
+        
+        <div class="con">
+            <hr>
+            
             <h1>달 단위 뽑기</h1>
+            
             <form action="/xlsx/xlsxbymonth" method="post" id="month">
+                <label for="projName">Project Name</label>
+                <select name="pid" form="month">
+                    {% for i in test_list %}
+                    <option value="{{i.pid}}">{{i.projname}} ( {{i.pid}} ) </option>
+                    {% endfor %}
+                </select>
+                
                 <!--<label for="epid">Name</label>-->
                 <!--<select name="epid" form="month">-->
                 <!--    {% if test_list %}-->
@@ -66,7 +88,7 @@
                 </select>
                 
                 
-                <input type="submit" value="Submit"/>
+                <input type="submit" value="Extract"/>
             </form>
         </div>
         
